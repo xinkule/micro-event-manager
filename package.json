@@ -1,0 +1,39 @@
+{
+  "name": "micro-event-manager",
+  "version": "0.0.1",
+  "description": "A tiny event manager library based on publish-subscribe pattern",
+  "author": "Albert Zhong <ccnualbertzhong@163.com> (https://github.com/xinkule)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xinkule/micro-event-manager.git"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "event-manager",
+    "event",
+    "subscribe",
+    "publish"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && rollup -c",
+    "test": "jest",
+    "prepare": "yarn run build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^12.0.0",
+    "@types/jest": "^25.2.3",
+    "jest": "^26.0.1",
+    "rollup": "^2.13.1",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "ts-jest": "^26.1.0",
+    "typescript": "^3.9.0"
+  },
+  "files": [
+    "dist/"
+  ]
+}
