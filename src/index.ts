@@ -19,7 +19,7 @@ class EventManager {
     if (!this._events[name]) {
       this._events[name] = [];
     }
-    const event = { key: Date.now(), callback };
+    const event = { key: this._events[name].length, callback };
     this._events[name].push(event);
     return event.key;
   }

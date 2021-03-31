@@ -22,3 +22,12 @@ test('unsubscribe event', () => {
     key
   );
 });
+
+test('event keys do not repeat', () => {
+  const keys = [];
+  for (let i = 0; i < 100; i++) {
+    keys.push(eventManager.subscribe('test4', () => {}));
+  }
+  const set = new Set(keys);
+  expect(set.size).toBe(keys.length);
+});

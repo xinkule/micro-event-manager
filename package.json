@@ -1,6 +1,6 @@
 {
   "name": "micro-event-manager",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A tiny event manager library based on publish-subscribe pattern",
   "author": "Albert Zhong <ccnualbertzhong@163.com> (https://github.com/xinkule)",
   "license": "MIT",
@@ -21,7 +21,7 @@
   "scripts": {
     "build": "rm -rf dist && rollup -c",
     "test": "jest",
-    "prepare": "yarn run build"
+    "prepare": "yarn test && yarn run build"
   },
   "dependencies": {},
   "devDependencies": {
