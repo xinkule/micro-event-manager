@@ -1,6 +1,6 @@
 {
   "name": "micro-event-manager",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A tiny event manager library based on publish-subscribe pattern",
   "author": "Albert Zhong <ccnualbertzhong@163.com> (https://github.com/xinkule)",
   "license": "MIT",

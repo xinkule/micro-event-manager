@@ -23,10 +23,16 @@ test('unsubscribe event', () => {
   );
 });
 
-test('event keys do not repeat', () => {
+test('event keys are not duplicate', () => {
   const keys = [];
   for (let i = 0; i < 100; i++) {
-    keys.push(eventManager.subscribe('test4', () => {}));
+    const key = eventManager.subscribe('test4', () => {});
+    eventManager.unSubscribe('test4', key);
+    keys.push(key);
+  }
+  for (let i = 0; i < 100; i++) {
+    const key = eventManager.subscribe('test4', () => {});
+    keys.push(key);
   }
   const set = new Set(keys);
   expect(set.size).toBe(keys.length);

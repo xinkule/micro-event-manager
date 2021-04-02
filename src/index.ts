@@ -15,11 +15,13 @@ class EventManager {
 
   _publishedEvents: PublishedEvents[] = [];
 
+  _uniqueId = 0; // use self increasing number to guarantee global uniqueness
+
   subscribe(name: string, callback: Fn): number {
     if (!this._events[name]) {
       this._events[name] = [];
     }
-    const event = { key: this._events[name].length, callback };
+    const event = { key: this._uniqueId++, callback };
     this._events[name].push(event);
     return event.key;
   }
