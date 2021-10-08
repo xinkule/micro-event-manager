@@ -13,9 +13,12 @@ yarn add micro-event-manager
 ## Usage
 
 ```js
-import eventManager from 'micro-event-manager';
+import { EventManager } from 'micro-event-manager';
 
-// first subscribe to an event, it will return an unique key
+// first create a manager instance
+const eventManager = new EventManager();
+
+// then subscribe to an event, it will return an unique key
 const key = eventManager.subscribe('log', () => {
   console.log('executed');
 });

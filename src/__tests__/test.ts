@@ -1,13 +1,15 @@
-import eventManager from '../index';
+import { EventManager } from '../index';
 
 test('subscribed event has been triggered', () => {
   const callback = jest.fn();
+  const eventManager = new EventManager();
   eventManager.subscribe('test1', callback);
   eventManager.publish('test1', 'data');
   expect(callback).toHaveBeenCalledWith('data');
 });
 
 test('event published before subscription can be triggered', () => {
+  const eventManager = new EventManager();
   eventManager.publish('test2', 'data');
   eventManager.publish('test2', 'data1');
   const callback = jest.fn();
@@ -16,6 +18,7 @@ test('event published before subscription can be triggered', () => {
 });
 
 test('unsubscribe event', () => {
+  const eventManager = new EventManager();
   const key = eventManager.subscribe('test3', () => {});
   eventManager.unSubscribe('test3', key);
   expect(eventManager._events['test3'].map((item) => item.key)).not.toContain(
@@ -24,6 +27,7 @@ test('unsubscribe event', () => {
 });
 
 test('event keys are not duplicate', () => {
+  const eventManager = new EventManager();
   const keys = [];
   for (let i = 0; i < 100; i++) {
     const key = eventManager.subscribe('test4', () => {});

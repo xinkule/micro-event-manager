@@ -10,7 +10,7 @@ interface PublishedEvents {
   data?: any;
 }
 
-class EventManager {
+export class EventManager {
   _events: { [key: string]: Event[] } = {};
 
   _publishedEvents: PublishedEvents[] = [];
@@ -58,7 +58,3 @@ class EventManager {
     return this.subscribe(name, callback);
   }
 }
-
-const eventManager = new EventManager();
-
-export default eventManager;
